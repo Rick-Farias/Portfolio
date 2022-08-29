@@ -677,4 +677,10 @@ width: 100%;
     #sec-4 .card{
         width: 350px;
     }
+    .nav .nome {
+    left: 20px;
+  }
+    .container-sec-2 .texto p{
+    height: 290px;
+  }
 }
