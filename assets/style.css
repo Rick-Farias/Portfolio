@@ -570,6 +570,7 @@ width: 100%;
     
 }
 
+/*----------------- RESPONSIVO ---------------*/
 
 @media(min-width:1100px){
     .menu-2{
@@ -645,7 +646,9 @@ width: 100%;
         width: 350px;
         margin: auto;
     }
-    
+    .text .texto-2 .btn-contato{
+        margin-left: 70px;
+    }
 }
 
 
@@ -658,7 +661,7 @@ width: 100%;
         }
         
         #saida-3{
-        font-size: 4.0rem;
+        font-size: 3.5rem;
         margin-left: -3px;
         color: var(--azul);
         }
