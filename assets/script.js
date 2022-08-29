@@ -120,7 +120,7 @@ menuItems.forEach(item =>{
     const to = document.querySelector(id).offsetTop;
 
     window.scroll({
-      top: to - 90,
+      top: to - 80,
       behavior: "smooth",
     });
   })
