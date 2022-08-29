@@ -25,10 +25,7 @@ function digitar(text_1, text_2, text_3, c1, c2, c3) {
 }
 digitar("Hello world,", "my name is...", "Riquelme! ", 0, 0, 0);
 
-
 /* VARIAVEIS DE NIVEL DA LINGUAGEM */
-
-
 
 function contador_html(ct, n_html) {
   let html = document.getElementById("ct-html");
@@ -43,10 +40,8 @@ function contador_html(ct, n_html) {
 }
 contador_html(0, 96);
 
-
-
 function contador_css(ct, n_css) {
-  let css = document.getElementById("ct-css")
+  let css = document.getElementById("ct-css");
 
   if (ct < n_css) {
     setTimeout(() => {
@@ -56,62 +51,77 @@ function contador_css(ct, n_css) {
     }, 65);
   }
 }
-contador_css(0, 91)
-
+contador_css(0, 91);
 
 function contador_js(ct, n_js) {
-    let js = document.getElementById("ct-js")
-  
-    if (ct < n_js) {
-      setTimeout(() => {
-        js.innerHTML = +`${ct}`;
-        ct++;
-        contador_js(ct, n_js);
-      }, 65);
-    }
+  let js = document.getElementById("ct-js");
+
+  if (ct < n_js) {
+    setTimeout(() => {
+      js.innerHTML = +`${ct}`;
+      ct++;
+      contador_js(ct, n_js);
+    }, 65);
   }
-  contador_js(0, 86)
+}
+contador_js(0, 86);
 
 /* Dark mode button */
 
 let btn_mode = document.getElementById("btn-mode");
 
-btn_mode.addEventListener('click', ()=>{
+btn_mode.addEventListener("click", () => {
   let mode_ball = document.getElementById("mode-ball");
   let class_mode_ball = mode_ball.className;
 
-  if(class_mode_ball !== "light"){
-      mode_ball.classList.remove("dark");
-      mode_ball.classList.add("light");
-
-  }else if(class_mode_ball !== "dark"){
-      mode_ball.classList.remove("light");
-      mode_ball.classList.add("dark");
+  if (class_mode_ball !== "light") {
+    mode_ball.classList.remove("dark");
+    mode_ball.classList.add("light");
+  } else if (class_mode_ball !== "dark") {
+    mode_ball.classList.remove("light");
+    mode_ball.classList.add("dark");
   }
-  mode()
-})
+  mode();
+});
 
-function mode (){
+function mode() {
   let mode_ball = document.getElementById("mode-ball");
   let class_mode_ball = mode_ball.className;
 
-  let cor_secundaria = getComputedStyle(document.documentElement).getPropertyValue('--cor-secundaria');
+  let cor_secundaria = getComputedStyle(
+    document.documentElement
+  ).getPropertyValue("--cor-secundaria");
 
-  if(class_mode_ball === "light"){
-    document.documentElement.style.setProperty('--cor-primaria', '#E8E8ED')
-    document.documentElement.style.setProperty('--cor-secundaria', '#051937')
-  }else if(class_mode_ball === "dark"){
-    document.documentElement.style.setProperty('--cor-primaria', '#051937')
-    document.documentElement.style.setProperty('--cor-secundaria', '#E8E8ED')
+  if (class_mode_ball === "light") {
+    document.documentElement.style.setProperty("--cor-primaria", "#E8E8ED");
+    document.documentElement.style.setProperty("--cor-secundaria", "#051937");
+  } else if (class_mode_ball === "dark") {
+    document.documentElement.style.setProperty("--cor-primaria", "#051937");
+    document.documentElement.style.setProperty("--cor-secundaria", "#E8E8ED");
   }
-
 }
-mode()
+mode();
 
 const btn_menu = document.getElementById("btn-menu");
 
-btn_menu.addEventListener('click', () =>{
+btn_menu.addEventListener("click", () => {
   const menu_2 = document.getElementById("menu-2");
   menu_2.classList.toggle("menu-on-off");
-  
+});
+
+
+
+const menuItems = document.querySelectorAll(".menu a, .nome a");
+menuItems.forEach(item =>{
+  item.addEventListener('click', (event) =>{
+    event.preventDefault();
+    const element = event.target;
+    const id = element.getAttribute('href');
+    const to = document.querySelector(id).offsetTop;
+
+    window.scroll({
+      top: to - 90,
+      behavior: "smooth",
+    });
+  })
 })
