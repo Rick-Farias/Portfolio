@@ -633,7 +633,7 @@ nav a{
 
 @media (max-width: 550px) {
   .nav-bar .nome {
-    font-size: 1.0rem;
+    font-size: 1.2rem;
     left: 10px;
   }
   #btn-mode {
@@ -644,9 +644,6 @@ nav a{
     right: 15px;
   }
 
-  #sec-1 {
-    margin-top: -200px;
-  }
   .text {
     justify-content: center;
   }
